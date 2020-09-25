@@ -45,5 +45,16 @@ public class Tablero {
 		if(indice < 0 || indice > 9)
 			throw new ArrayIndexOutOfBoundsException("Numero fuera del rango (del 0 al 8");
 	}
+	
+	
+	//funcion solo para usarse en el main, borrarlo despues
+	public void imprimir() 
+	{
+		for(int i = 0; i < _tablero.length; i++) {
+			if(i == 3 || i == 6 )
+				System.out.println("");
+			System.out.print(_tablero[i] + " ");
+			}
+	}
 
 }
