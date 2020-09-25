@@ -22,7 +22,9 @@ import java.awt.event.MouseAdapter;
 
 public class Interfaz {
 
-	 Juego juego;
+	Juego juego;
+	
+	private JPanel tablero;
 	
 	private JFrame frame;
 	
@@ -58,7 +60,6 @@ public class Interfaz {
 	 */
 	private void initialize() {
 		
-		
 		frame = new JFrame();
 		frame.getContentPane().setEnabled(false);
 		frame.setBounds(100, 100, 800, 600);
@@ -74,7 +75,7 @@ public class Interfaz {
 		button.setBounds(0, 0, 12, 9);
 		frame.getContentPane().add(button);
 		
-		JPanel tablero = new JPanel();
+		tablero = new JPanel();
 		tablero.setBackground(Color.LIGHT_GRAY);
 		tablero.setBounds(233, 132, 350, 350);
 		frame.getContentPane().add(tablero);
@@ -82,143 +83,163 @@ public class Interfaz {
 		
 		
 		JButton boton0 = new JButton("");
-		boton0.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseExited(MouseEvent arg0) 
-			{
-				boton0.setBackground(Color.WHITE);
-			}
-		});
-		boton0.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent arg0)
-			{
-				boton0.setBackground(Color.LIGHT_GRAY);
-			}
-		});
-		boton0.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				juego.cargarPosicion(0);
-//				boton0.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(0, boton0);
-			}
-		});
-		boton0.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton0.setBackground(Color.WHITE);
-		tablero.add(boton0);
+		
+		movimientoCursor(boton0);
+		
+		clickSobreBoton(0, boton0);
+
+//		boton0.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) 
+//			{
+//				jugada(0, boton0);
+//			}
+//		});
+//		boton0.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton0.setBackground(Color.WHITE);
+//		tablero.add(boton0);
+		
 		
 		
 		JButton boton1 = new JButton("");
-		boton1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-//				juego.cargarPosicion(1);
-//				boton1.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(1, boton1);
-			}
-		});
-		boton1.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton1.setBackground(Color.WHITE);
-		tablero.add(boton1);
+		
+		movimientoCursor(boton1);
+		
+		clickSobreBoton(1, boton1);
+//		
+//		boton1.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0)
+//			{
+//				jugada(1, boton1);
+//			}
+//		});
+//		
+//		boton1.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton1.setBackground(Color.WHITE);
+//		tablero.add(boton1);
+		
 		
 		
 		JButton boton2 = new JButton("");
-		boton2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				juego.cargarPosicion(2);
-//				boton2.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(2, boton2);
-			}
-		});
-		boton2.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton2.setBackground(Color.WHITE);
-		tablero.add(boton2);
+		
+		movimientoCursor(boton2);
+		
+		clickSobreBoton(2, boton2);
+		
+//		boton2.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e)
+//			{
+//				jugada(2, boton2);
+//			}
+//		});
+//		boton2.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton2.setBackground(Color.WHITE);
+//		tablero.add(boton2);
+		
 		
 		
 		JButton boton3 = new JButton("");
-		boton3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				juego.cargarPosicion(3);
-//				boton3.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(3, boton3);
-			}
-		});
-		boton3.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton3.setBackground(Color.WHITE);
-		tablero.add(boton3);
+		
+		movimientoCursor(boton3);
+		
+		clickSobreBoton(3, boton3);
+		
+//		boton3.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) 
+//			{
+//				jugada(3, boton3);
+//			}
+//		});
+//		boton3.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton3.setBackground(Color.WHITE);
+//		tablero.add(boton3);
+		
 		
 		
 		JButton boton4 = new JButton("");
-		boton4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				juego.cargarPosicion(4);
-//				boton4.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(4, boton4);
-			}
-		});
-		boton4.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton4.setBackground(Color.WHITE);
-		tablero.add(boton4);
+		
+		movimientoCursor(boton4);
+		
+		clickSobreBoton(4, boton4);
+		
+//		boton4.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) 
+//			{
+//				jugada(4, boton4);
+//			}
+//		});
+//		boton4.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton4.setBackground(Color.WHITE);
+//		tablero.add(boton4);
+		
 		
 		
 		JButton boton5 = new JButton("");
-		boton5.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				juego.cargarPosicion(5);
-//				boton5.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(5, boton5);
-			}
-		});
-		boton5.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton5.setBackground(Color.WHITE);
-		tablero.add(boton5);
+		
+		movimientoCursor(boton5);
+		
+		clickSobreBoton(5, boton5);
+		
+//		boton5.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) 
+//			{
+//				jugada(5, boton5);
+//			}
+//		});
+//		boton5.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton5.setBackground(Color.WHITE);
+//		tablero.add(boton5);
+		
 		
 		
 		JButton boton6 = new JButton("");
-		boton6.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				juego.cargarPosicion(6);
-//				boton6.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(6, boton6);
-			}
-		});
-		boton6.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton6.setBackground(Color.WHITE);
-		tablero.add(boton6);
+		
+		movimientoCursor(boton6);
+		
+		clickSobreBoton(6, boton6);
+		
+//		boton6.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) 
+//			{
+//				jugada(6, boton6);
+//			}
+//		});
+//		boton6.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton6.setBackground(Color.WHITE);
+//		tablero.add(boton6);
+		
 		
 		
 		JButton boton7 = new JButton("");
-		boton7.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				juego.cargarPosicion(7);
-//				boton7.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(7, boton7);
-			}
-		});
-		boton7.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton7.setBackground(Color.WHITE);
-		tablero.add(boton7);
+		
+		movimientoCursor(boton7);
+		
+		clickSobreBoton(7, boton7);
+//		boton7.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) 
+//			{
+//				jugada(7, boton7);
+//			}
+//		});
+//		boton7.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton7.setBackground(Color.WHITE);
+//		tablero.add(boton7);
+		
 		
 		
 		JButton boton8 = new JButton("");
-		boton8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				juego.cargarPosicion(8);
-//				boton8.setText(juego.getTurno());
-//				juego.avanzarTurno();
-				jugada(8, boton8);
-			}
-		});
-		boton8.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton8.setBackground(Color.WHITE);
-		tablero.add(boton8);
+		
+		movimientoCursor(boton8);
+		
+		clickSobreBoton(8, boton8);
+//		boton8.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) 
+//			{
+//				jugada(8, boton8);
+//			}
+//		});
+//		boton8.setFont(new Font("Tahoma", Font.PLAIN, 75));
+//		boton8.setBackground(Color.WHITE);
+//		tablero.add(boton8);
 		
 		lblGanador = new JLabel("");
 		lblGanador.setFont(new Font("Tahoma", Font.PLAIN, 35));
@@ -227,6 +248,7 @@ public class Interfaz {
 		
 	}
 	
+	//Metodos privados---------------------------------------------------------------------------------------
 	private void jugada(int posicion, JButton boton) 
 	{
 		if(juego.cargarPosicion(posicion))
@@ -240,4 +262,40 @@ public class Interfaz {
 		}
 		juego.avanzarTurno();
 	}
+	
+	
+	private void movimientoCursor(JButton boton) 
+	{
+		boton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseExited(MouseEvent arg0) 
+			{
+				boton.setBackground(Color.WHITE);
+			}
+		});
+		
+		boton.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent arg0)
+			{
+				boton.setBackground(Color.LIGHT_GRAY);
+			}
+		});
+		
+	}
+	
+	
+	private void clickSobreBoton(int posicion, JButton boton) 
+	{
+		boton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				jugada(posicion, boton);
+			}
+		});
+		boton.setFont(new Font("Tahoma", Font.PLAIN, 75));
+		boton.setBackground(Color.WHITE);
+		tablero.add(boton);
+	}
+	//------------------------------------------------------------------------------------------------------
 }
