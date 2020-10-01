@@ -73,19 +73,21 @@ public class Interfaz {
 		
 		
 		JLabel lblTatetiToroidal = new JLabel( "TATETI TOROIDAL" );
-		lblTatetiToroidal.setBounds( 263, 11, 306, 110 );
+		lblTatetiToroidal.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/TATETI-TOROIDAL.png")));
+		lblTatetiToroidal.setBounds( 185, 11, 471, 110 );
 		lblTatetiToroidal.setFont( new Font( "Verdana", Font.BOLD, 28 ) );
 		frmTatetiToroidalElias.getContentPane().add( lblTatetiToroidal );
 		
 		JButton button = new JButton( "" );
+		button.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cruz.png")));
 		button.setBounds( 0, 0, 12, 9 );
 		frmTatetiToroidalElias.getContentPane().add( button );
 		
 		tablero = new JPanel();
-		tablero.setBackground( Color.LIGHT_GRAY );
+		tablero.setBackground( new Color( 79, 21, 255 ) );
 		tablero.setBounds( 233, 132, 350, 350 );
 		frmTatetiToroidalElias.getContentPane().add( tablero );
-		tablero.setLayout( new GridLayout(3, 3, 5, 5) );
+		tablero.setLayout( new GridLayout( 3, 3, 5, 5 ) );
 		
 		//Celdas del tablero------------------------------------------------------------------------------
 		
@@ -154,18 +156,18 @@ public class Interfaz {
 		if( juego.cargarPosicionEnTablero( posicion ) )
 		{
 			if(juego.getTurno().equals("CRUZ"))
-				boton.setText( "X" );
+				boton.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cruz.png")));
 			else
-				boton.setText( "O" );
+				boton.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cuadrado.png")));
 				
 			lblGanador.setText( "Ganador " + juego.getTurno() );
 		}
 		else
 		{
 			if(juego.getTurno().equals("CRUZ"))
-				boton.setText( "X" );
+				boton.setIcon( new ImageIcon(Interfaz.class.getResource("/imagenes/Cruz.png")) );
 			else
-				boton.setText( "O" );
+				boton.setIcon( new ImageIcon(Interfaz.class.getResource("/imagenes/Cuadrado.png")) );
 		}
 		juego.avanzarTurno();
 	}
@@ -177,7 +179,7 @@ public class Interfaz {
 			@Override
 			public void mouseExited( MouseEvent arg0 ) 
 			{
-				boton.setBackground( Color.WHITE );
+				boton.setBackground( new Color( 02, 40, 59 ) );
 			}
 		} );
 		
@@ -185,7 +187,7 @@ public class Interfaz {
 			@Override
 			public void mouseMoved( MouseEvent arg0 )
 			{
-				boton.setBackground( Color.LIGHT_GRAY );
+				boton.setBackground( new Color( 7, 91, 139 ) );
 			}
 		} );
 		
@@ -201,7 +203,7 @@ public class Interfaz {
 			}
 		} );
 		boton.setFont( new Font( "Tahoma", Font.PLAIN, 75 ) );
-		boton.setBackground( Color.WHITE );
+		boton.setBackground( new Color( 02, 40, 59 ));
 		tablero.add( boton );
 	}
 	//-------------------------------------------------------------------------------------------------------
