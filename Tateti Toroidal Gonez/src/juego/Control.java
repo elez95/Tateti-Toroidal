@@ -1,7 +1,5 @@
 package juego;
 
-//import juego.Tablero;
-//import juego.Combinaciones;
 
 public class Control {
 	
@@ -14,12 +12,19 @@ public class Control {
 	
 	/*
 	 * Consulta a las 4 funciones que estan debajo, si alguna es verdadero hay tateti
+	 * Consulta si en alguna de las 4 orientaciones hay tateti
 	 * 
 	 * */
-	public static boolean hayGanador(int ubicacion, Combinaciones combinaciones, Tablero t) 
+	public static boolean hayGanador( int ubicacion, Combinaciones combinaciones, Tablero t ) 
 	{
-		if(tatetiHorizontal(ubicacion, combinaciones, t) || tatetiVertical(ubicacion, combinaciones, t)
-			|| tatetiDiagonalA(ubicacion, combinaciones, t) || tatetiDiagonalB(ubicacion, combinaciones, t))
+		if( esTatetiHorizontal( ubicacion, combinaciones, t ) 
+			|| 
+			esTatetiVertical( ubicacion, combinaciones, t )
+			|| 
+			esTatetiDiagonalA( ubicacion, combinaciones, t ) 
+			|| 
+			esTatetiDiagonalB( ubicacion, combinaciones, t ) 
+			)
 		
 			return true;
 	
@@ -33,37 +38,38 @@ public class Control {
 	 * 
 	 * */
 	
-	private static boolean tatetiHorizontal(int ubicacion, Combinaciones variante, Tablero t) 
+	private static boolean esTatetiHorizontal( int ubicacion, Combinaciones combinacion, Tablero tableroActual ) 
 	{
-		int[] ubicacionesGanadoras = variante.getHorizontales(ubicacion);
+		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraHorizontal( ubicacion );
 		
-		return verCoincidencia(t, ubicacionesGanadoras);
+		return verCoincidencia( tableroActual, las3UbicacionesGanadoras );
 	}
 	
 	
 	
-	private static boolean tatetiVertical(int ubicacion, Combinaciones variante, Tablero t) 
+	private static boolean esTatetiVertical( int ubicacion, Combinaciones combinacion, Tablero tableroActual ) 
 	{
-		int[] ubicacionesGanadoras = variante.getVerticales(ubicacion);
-		return verCoincidencia(t, ubicacionesGanadoras);
+		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraVertical( ubicacion );
+		
+		return verCoincidencia( tableroActual, las3UbicacionesGanadoras );
 	}
 	
 	
 	
-	private static boolean tatetiDiagonalA(int ubicacion, Combinaciones variante, Tablero t) 
+	private static boolean esTatetiDiagonalA( int ubicacion, Combinaciones combinacion, Tablero tableroActual ) 
 	{
-		int[] ubicacionesGanadoras = variante.getDiagonalesA(ubicacion);
+		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraDiagonalA( ubicacion );
 		
-		return verCoincidencia(t, ubicacionesGanadoras);
+		return verCoincidencia( tableroActual, las3UbicacionesGanadoras );
 	}
 	
 	
 	
-	private static boolean tatetiDiagonalB(int ubicacion, Combinaciones variante, Tablero t) 
+	private static boolean esTatetiDiagonalB( int ubicacion, Combinaciones combinacion, Tablero tableroActual ) 
 	{
-		int[] ubicacionesGanadoras = variante.getDiagonalesB(ubicacion);
+		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraDiagonalB( ubicacion );
 		
-		return verCoincidencia(t, ubicacionesGanadoras);
+		return verCoincidencia( tableroActual, las3UbicacionesGanadoras );
 	}
 
 
@@ -84,11 +90,14 @@ public class Control {
 	 * */
 	 
 	
-	private static boolean verCoincidencia(Tablero t, int[] ubicacionesGanadoras) {
-		String[] tablero = t.verTablero();
+	private static boolean verCoincidencia( Tablero tableroActual, int[] ubicacionesGanadoras ) {
+		String[] tablero = tableroActual.verTablero();
 		
-		if(tablero[ubicacionesGanadoras[0]].equals(tablero[ubicacionesGanadoras[1]]) 
-				&& tablero[ubicacionesGanadoras[1]].equals(tablero[ubicacionesGanadoras[2]]))
+		if( tablero[ ubicacionesGanadoras[0] ].equals( tablero[ ubicacionesGanadoras[1] ] ) 
+				&& 
+			tablero[ ubicacionesGanadoras[1] ].equals( tablero[ ubicacionesGanadoras[2] ] ) 
+			)
+			
 			return true;
 		else
 			return false;

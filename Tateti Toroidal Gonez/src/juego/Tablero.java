@@ -43,7 +43,7 @@ public class Tablero {
 			throw new RuntimeException("Se esta usando una posicion ocupada");
 		
 		if(indice < 0 || indice > 9)
-			throw new ArrayIndexOutOfBoundsException("Numero fuera del rango (del 0 al 8");
+			throw new ArrayIndexOutOfBoundsException("Numero fuera del rango (del 0 al 8)");
 	}
 	
 	

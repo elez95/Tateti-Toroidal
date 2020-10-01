@@ -18,7 +18,7 @@ public class Juego {
 	}
 	
 	
-	public boolean cargarPosicion(int posicion) 
+	public boolean cargarPosicionEnTablero(int posicion) 
 	{
 		tablero.cambiarEstado(posicion, turno);
 		if(cantidadJugadas >= 4) {
@@ -34,7 +34,8 @@ public class Juego {
 	
 	public String getTurno() 
 	{
-		return ( turno.equals("CRUZ") ? "X" : "0" );
+		//return ( turno.equals("CRUZ") ? "X" : "0" );
+		return turno;
 	}
 	
 	

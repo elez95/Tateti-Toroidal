@@ -36,14 +36,14 @@ public class Interfaz {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main( String[] args ) {
 		
-		EventQueue.invokeLater(new Runnable() {
+		EventQueue.invokeLater( new Runnable() {
 			public void run() {
 				try {
 					Interfaz window = new Interfaz();
-					window.frmTatetiToroidalElias.setVisible(true);
-				} catch (Exception e) {
+					window.frmTatetiToroidalElias.setVisible( true );
+				} catch ( Exception e ) {
 					e.printStackTrace();
 				}
 			}
@@ -64,137 +64,145 @@ public class Interfaz {
 	private void initialize() {
 		
 		frmTatetiToroidalElias = new JFrame();
-		frmTatetiToroidalElias.setUndecorated(true);
-		//frmTatetiToroidalElias.setContentPane(new JLabel(new ImageIcon("Fondo.png")));
-		frmTatetiToroidalElias.setTitle("Tateti Toroidal Elias Gonez");
-		frmTatetiToroidalElias.getContentPane().setEnabled(false);
-		frmTatetiToroidalElias.setBounds(100, 100, 800, 600);
-		frmTatetiToroidalElias.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmTatetiToroidalElias.getContentPane().setLayout(null);
+		frmTatetiToroidalElias.setUndecorated( true );
+		frmTatetiToroidalElias.setTitle( "Tateti Toroidal Elias Gonez" );
+		frmTatetiToroidalElias.getContentPane().setEnabled( false );
+		frmTatetiToroidalElias.setBounds( 100, 100, 800, 600 );
+		frmTatetiToroidalElias.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+		frmTatetiToroidalElias.getContentPane().setLayout( null );
 		
 		
-		JLabel lblTatetiToroidal = new JLabel("TATETI TOROIDAL");
-		lblTatetiToroidal.setBounds(263, 11, 306, 110);
-		lblTatetiToroidal.setFont(new Font("Verdana", Font.BOLD, 28));
-		frmTatetiToroidalElias.getContentPane().add(lblTatetiToroidal);
+		JLabel lblTatetiToroidal = new JLabel( "TATETI TOROIDAL" );
+		lblTatetiToroidal.setBounds( 263, 11, 306, 110 );
+		lblTatetiToroidal.setFont( new Font( "Verdana", Font.BOLD, 28 ) );
+		frmTatetiToroidalElias.getContentPane().add( lblTatetiToroidal );
 		
-		JButton button = new JButton("");
-		button.setBounds(0, 0, 12, 9);
-		frmTatetiToroidalElias.getContentPane().add(button);
+		JButton button = new JButton( "" );
+		button.setBounds( 0, 0, 12, 9 );
+		frmTatetiToroidalElias.getContentPane().add( button );
 		
 		tablero = new JPanel();
-		tablero.setBackground(Color.LIGHT_GRAY);
-		tablero.setBounds(233, 132, 350, 350);
-		frmTatetiToroidalElias.getContentPane().add(tablero);
-		tablero.setLayout(new GridLayout(3, 3, 5, 5));
+		tablero.setBackground( Color.LIGHT_GRAY );
+		tablero.setBounds( 233, 132, 350, 350 );
+		frmTatetiToroidalElias.getContentPane().add( tablero );
+		tablero.setLayout( new GridLayout(3, 3, 5, 5) );
 		
-		//Botones------------------------------------------------------------------------------
+		//Celdas del tablero------------------------------------------------------------------------------
 		
-		JButton boton0 = new JButton("");
-		movimientoCursor(boton0);
-		clickSobreBoton(0, boton0);		
+		JButton celda0 = new JButton( "" );
+		movimientoCursor( celda0 );
+		crearCelda( 0, celda0 );		
 		
 		
-		JButton boton1 = new JButton("");
-		movimientoCursor(boton1);
-		clickSobreBoton(1, boton1);
+		JButton celda1 = new JButton( "" );
+		movimientoCursor( celda1 );
+		crearCelda( 1, celda1 );
 	
 		
-		JButton boton2 = new JButton("");
-		movimientoCursor(boton2);
-		clickSobreBoton(2, boton2);
+		JButton celda2 = new JButton( "" );
+		movimientoCursor( celda2 );
+		crearCelda( 2, celda2 );
 			
 		
-		JButton boton3 = new JButton("");
-		movimientoCursor(boton3);
-		clickSobreBoton(3, boton3);
+		JButton celda3 = new JButton( "" );
+		movimientoCursor( celda3 );
+		crearCelda( 3, celda3 );
 		
 		
-		JButton boton4 = new JButton("");
-		movimientoCursor(boton4);
-		clickSobreBoton(4, boton4);		
-		
-		JButton boton5 = new JButton("");
-		movimientoCursor(boton5);
-		clickSobreBoton(5, boton5);
+		JButton celda4 = new JButton( "" );
+		movimientoCursor( celda4 );
+		crearCelda( 4, celda4 );		
 		
 		
-		JButton boton6 = new JButton("");
-		movimientoCursor(boton6);
-		clickSobreBoton(6, boton6);
+		JButton celda5 = new JButton( "" );
+		movimientoCursor( celda5 );
+		crearCelda( 5, celda5 );
+		
+		
+		JButton celda6 = new JButton( "" );
+		movimientoCursor( celda6 );
+		crearCelda( 6, celda6 );
 				
 		
-		JButton boton7 = new JButton("");
-		movimientoCursor(boton7);
-		clickSobreBoton(7, boton7);
+		JButton celda7 = new JButton( "" );
+		movimientoCursor( celda7 );
+		crearCelda( 7, celda7 );
 			
 		
-		JButton boton8 = new JButton("");
-		movimientoCursor(boton8);
-		clickSobreBoton(8, boton8);
+		JButton celda8 = new JButton( "" );
+		movimientoCursor( celda8 );
+		crearCelda( 8, celda8 );
 		
 		//------------------------------------------------------------------------------------------------
 
 		
-		lblGanador = new JLabel("");
-		lblGanador.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		lblGanador.setBounds(402, 523, 230, 28);
-		frmTatetiToroidalElias.getContentPane().add(lblGanador);
+		lblGanador = new JLabel( "" );
+		lblGanador.setFont(new Font( "Tahoma", Font.PLAIN, 35 ) );
+		lblGanador.setBounds( 402, 523, 230, 28 );
+		frmTatetiToroidalElias.getContentPane().add( lblGanador );
 		
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Fondo.png")));
-		label.setBounds(0, 0, 800, 600);
-		frmTatetiToroidalElias.getContentPane().add(label);
+		JLabel imagenDeFondo = new JLabel( "" );
+		imagenDeFondo.setIcon( new ImageIcon( Interfaz.class.getResource( "/imagenes/Fondo.png" ) ) );
+		imagenDeFondo.setBounds( 0, 0, 800, 600 );
+		frmTatetiToroidalElias.getContentPane().add( imagenDeFondo );
 		
 	}
 	
 	//Metodos privados---------------------------------------------------------------------------------------
-	private void jugada(int posicion, JButton boton) 
+	private void cargarJugada( int posicion, JButton boton ) 
 	{
-		if(juego.cargarPosicion(posicion))
+		if( juego.cargarPosicionEnTablero( posicion ) )
 		{
-			boton.setText(juego.getTurno());
-			lblGanador.setText("Ganador " + juego.getTurno());
+			if(juego.getTurno().equals("CRUZ"))
+				boton.setText( "X" );
+			else
+				boton.setText( "O" );
+				
+			lblGanador.setText( "Ganador " + juego.getTurno() );
 		}
 		else
 		{
-			boton.setText(juego.getTurno());
+			if(juego.getTurno().equals("CRUZ"))
+				boton.setText( "X" );
+			else
+				boton.setText( "O" );
 		}
 		juego.avanzarTurno();
 	}
 	
 	
-	private void movimientoCursor(JButton boton) 
+	private void movimientoCursor( JButton boton ) 
 	{
-		boton.addMouseListener(new MouseAdapter() {
+		boton.addMouseListener( new MouseAdapter() {
 			@Override
-			public void mouseExited(MouseEvent arg0) 
+			public void mouseExited( MouseEvent arg0 ) 
 			{
-				boton.setBackground(Color.WHITE);
+				boton.setBackground( Color.WHITE );
 			}
-		});
+		} );
 		
-		boton.addMouseMotionListener(new MouseMotionAdapter() {
+		boton.addMouseMotionListener( new MouseMotionAdapter() {
 			@Override
-			public void mouseMoved(MouseEvent arg0)
+			public void mouseMoved( MouseEvent arg0 )
 			{
-				boton.setBackground(Color.LIGHT_GRAY);
+				boton.setBackground( Color.LIGHT_GRAY );
 			}
-		});
+		} );
 		
 	}
 	
 	
-	private void clickSobreBoton(int posicion, JButton boton) 
+	private void crearCelda( int posicion, JButton boton ) 
 	{
-		boton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
+		boton.addActionListener( new ActionListener() {
+			public void actionPerformed( ActionEvent e ) 
 			{
-				jugada(posicion, boton);
+				cargarJugada( posicion, boton );
 			}
-		});
-		boton.setFont(new Font("Tahoma", Font.PLAIN, 75));
-		boton.setBackground(Color.WHITE);
-		tablero.add(boton);
+		} );
+		boton.setFont( new Font( "Tahoma", Font.PLAIN, 75 ) );
+		boton.setBackground( Color.WHITE );
+		tablero.add( boton );
 	}
+	//-------------------------------------------------------------------------------------------------------
 }

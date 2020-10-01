@@ -23,7 +23,7 @@ public class Combinaciones {
 	Combinaciones()
 	{
 		/*
-		 * Guardo los arreglos en el hashmap respetando la variante ganadora de cada cuadrante
+		 * Guardo los arreglos en el hashmap respetando la variante ganadora de cada celda
 		 * 
 		 * */
 		combinacionesEnHorizontal.put( 0, new int[] {0,1,2} );
@@ -68,22 +68,22 @@ public class Combinaciones {
 	}
 	
 	
-	public int[] getHorizontales(int ubicacion) 
+	public int[] getSuCombinacionGanadoraHorizontal(int ubicacion) 
 	{
 		return combinacionesEnHorizontal.get(ubicacion);
 	}
 	
-	public int[] getVerticales(int ubicacion) 
+	public int[] getSuCombinacionGanadoraVertical(int ubicacion) 
 	{
 		return combinacionesEnVertical.get(ubicacion);
 	}
 
-	public int[] getDiagonalesA(int ubicacion) 
+	public int[] getSuCombinacionGanadoraDiagonalA(int ubicacion) 
 	{
 		return combinacionesEnDiagonalA.get(ubicacion);
 	}
 
-	public int[] getDiagonalesB(int ubicacion) 
+	public int[] getSuCombinacionGanadoraDiagonalB(int ubicacion) 
 	{
 		return combinacionesEnDiagonalB.get(ubicacion);
 	}
