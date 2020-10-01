@@ -3,20 +3,20 @@ package juego;
 public class Juego {
 
 	Tablero tablero;
-	//Control control;
 	Combinaciones combinaciones;
 	private String turno;
 	private int cantidadJugadas;
 	
+	
 	Juego()
 	{
 		tablero = new Tablero();
-		//control = new Control();
 		combinaciones = new Combinaciones();
 		
 		turno = "CRUZ";
 		cantidadJugadas = 0;
 	}
+	
 	
 	public boolean cargarPosicion(int posicion) 
 	{
@@ -28,15 +28,9 @@ public class Juego {
 				return true;
 			}
 		}
-			
-		
-		
-		
-		tablero.imprimir();
-		System.out.println("");
 		return false;
-		//avanzarTurno();
 	}
+	
 	
 	public String getTurno() 
 	{
