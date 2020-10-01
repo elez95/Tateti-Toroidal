@@ -22,6 +22,7 @@ import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.Toolkit;
+import java.awt.Component;
 
 public class Interfaz {
 
@@ -79,15 +80,31 @@ public class Interfaz {
 		frmTatetiToroidalElias.getContentPane().add( lblTatetiToroidal );
 		
 		JButton button = new JButton( "" );
+		button.setAlignmentX(Component.CENTER_ALIGNMENT);
+		button.setFocusPainted(false);
+		button.setBorderPainted(false);
+		button.setBackground( new Color( 7, 91, 139 ) );
+		button.addMouseMotionListener(new MouseMotionAdapter() {
+			@Override
+			public void mouseMoved(MouseEvent e) {
+				button.setBackground( new Color( 7, 91, 139 ) );
+			}
+		});
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				button.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cuadrado.png")));
+			}
+		});
 		button.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cruz.png")));
-		button.setBounds( 0, 0, 12, 9 );
+		button.setBounds( 50, 255, 121, 110 );
 		frmTatetiToroidalElias.getContentPane().add( button );
 		
 		tablero = new JPanel();
 		tablero.setBackground( new Color( 79, 21, 255 ) );
 		tablero.setBounds( 233, 132, 350, 350 );
 		frmTatetiToroidalElias.getContentPane().add( tablero );
-		tablero.setLayout( new GridLayout( 3, 3, 5, 5 ) );
+		tablero.setLayout( new GridLayout( 3, 3, 3, 3 ) );
 		
 		//Celdas del tablero------------------------------------------------------------------------------
 		
@@ -196,6 +213,8 @@ public class Interfaz {
 	
 	private void crearCelda( int posicion, JButton boton ) 
 	{
+		boton.setFocusPainted(false);
+		boton.setBorderPainted(false);
 		boton.addActionListener( new ActionListener() {
 			public void actionPerformed( ActionEvent e ) 
 			{
