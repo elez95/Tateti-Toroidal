@@ -33,7 +33,15 @@ public class Interfaz {
 	private JFrame frmTatetiToroidalElias;
 	
 	private JLabel lblGanador;
+	
+	private JLabel turnoCruzLabel;
+	
+	private JLabel turnoCuadradoLabel;
+	
+	private JLabel ganadorCruz;
 
+	private JLabel ganadorCuadrado;
+	private JLabel salirLabel;
 	/**
 	 * Launch the application.
 	 */
@@ -79,33 +87,41 @@ public class Interfaz {
 		lblTatetiToroidal.setFont( new Font( "Verdana", Font.BOLD, 28 ) );
 		frmTatetiToroidalElias.getContentPane().add( lblTatetiToroidal );
 		
-		JButton button = new JButton( "" );
-		button.setAlignmentX(Component.CENTER_ALIGNMENT);
-		button.setFocusPainted(false);
-		button.setBorderPainted(false);
-		button.setBackground( new Color( 7, 91, 139 ) );
-		button.addMouseMotionListener(new MouseMotionAdapter() {
-			@Override
-			public void mouseMoved(MouseEvent e) {
-				button.setBackground( new Color( 7, 91, 139 ) );
-			}
-		});
-		button.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				button.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cuadrado.png")));
-			}
-		});
-		button.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cruz.png")));
-		button.setBounds( 50, 255, 121, 110 );
-		frmTatetiToroidalElias.getContentPane().add( button );
+		
+		salirLabel = new JLabel("");
+		salirLabel.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Salir.png")));
+		salirLabel.setBounds(760, 11, 30, 35);
+		frmTatetiToroidalElias.getContentPane().add(salirLabel);
+		
+		ganadorCruz = new JLabel("");
+		ganadorCruz.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Ganador-cruz.png")));
+		ganadorCruz.setBounds(271, 507, 350, 68);
+		frmTatetiToroidalElias.getContentPane().add(ganadorCruz);
+		ganadorCruz.setVisible(false);
+		
+		ganadorCuadrado = new JLabel("");
+		ganadorCuadrado.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Ganador-cuadrado.png")));
+		ganadorCuadrado.setBounds(271, 507, 350, 68);
+		frmTatetiToroidalElias.getContentPane().add(ganadorCuadrado);
+		ganadorCuadrado.setVisible(false);
+		
+		turnoCruzLabel = new JLabel("");
+		turnoCruzLabel.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Turno-cruz.png")));
+		turnoCruzLabel.setBounds(22, 403, 188, 102);
+		frmTatetiToroidalElias.getContentPane().add(turnoCruzLabel);
+		
+		turnoCuadradoLabel = new JLabel("");
+		turnoCuadradoLabel.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Turno-cuadrado.png")));
+		turnoCuadradoLabel.setBounds(22, 403, 188, 102);
+		frmTatetiToroidalElias.getContentPane().add(turnoCuadradoLabel);
+		
 		
 		tablero = new JPanel();
 		tablero.setBackground( new Color( 79, 21, 255 ) );
 		tablero.setBounds( 233, 132, 350, 350 );
 		frmTatetiToroidalElias.getContentPane().add( tablero );
 		tablero.setLayout( new GridLayout( 3, 3, 3, 3 ) );
-		
+
 		//Celdas del tablero------------------------------------------------------------------------------
 		
 		JButton celda0 = new JButton( "" );
@@ -170,23 +186,24 @@ public class Interfaz {
 	//Metodos privados---------------------------------------------------------------------------------------
 	private void cargarJugada( int posicion, JButton boton ) 
 	{
-		if( juego.cargarPosicionEnTablero( posicion ) )
+		if(!juego.verSiHayGanador() ) 
 		{
-			if(juego.getTurno().equals("CRUZ"))
-				boton.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cruz.png")));
+			if(!juego.seRepite(posicion)) {
+			if( juego.cargarPosicionEnTablero( posicion ) ) /////
+			{
+				dibujarImagenCelda(boton);
+				dibujarGanador();
+			}
 			else
-				boton.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cuadrado.png")));
-				
-			lblGanador.setText( "Ganador " + juego.getTurno() );
+			{
+				dibujarImagenCelda(boton);
+			}
+			juego.avanzarTurno();
+
+			dibujarCartelTurno();
+			}
 		}
-		else
-		{
-			if(juego.getTurno().equals("CRUZ"))
-				boton.setIcon( new ImageIcon(Interfaz.class.getResource("/imagenes/Cruz.png")) );
-			else
-				boton.setIcon( new ImageIcon(Interfaz.class.getResource("/imagenes/Cuadrado.png")) );
-		}
-		juego.avanzarTurno();
+
 	}
 	
 	
@@ -225,5 +242,34 @@ public class Interfaz {
 		boton.setBackground( new Color( 02, 40, 59 ));
 		tablero.add( boton );
 	}
-	//-------------------------------------------------------------------------------------------------------
+	
+	
+	private void dibujarImagenCelda( JButton boton ) 
+	{
+		if(juego.getTurno().equals("CRUZ"))
+			boton.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cruz.png")));
+		else
+			boton.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Cuadrado.png")));
+	}
+	
+	
+	private void dibujarGanador() 
+	{
+		if(juego.getTurno().equals("CRUZ"))
+			ganadorCruz.setVisible(true);
+		else
+			ganadorCuadrado.setVisible(true);
+		
+		turnoCruzLabel.setVisible(false);
+		turnoCuadradoLabel.setVisible(false);
+	}
+	
+	
+	private void dibujarCartelTurno() 
+	{
+		if(juego.getTurno().equals("CRUZ"))
+			turnoCruzLabel.setVisible(true);
+		else
+			turnoCruzLabel.setVisible(false);
+	}
 }

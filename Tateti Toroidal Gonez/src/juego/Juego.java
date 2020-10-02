@@ -6,6 +6,7 @@ public class Juego {
 	Combinaciones combinaciones;
 	private String turno;
 	private int cantidadJugadas;
+	private boolean elJuegoTermino;
 	
 	
 	Juego()
@@ -15,17 +16,21 @@ public class Juego {
 		
 		turno = "CRUZ";
 		cantidadJugadas = 0;
+		elJuegoTermino = false;
 	}
 	
 	
-	public boolean cargarPosicionEnTablero(int posicion) 
+	public boolean cargarPosicionEnTablero( int posicion ) 
 	{
-		tablero.cambiarEstado(posicion, turno);
-		if(cantidadJugadas >= 4) {
-			if(Control.hayGanador(posicion, combinaciones, tablero)) 
-			{
-				System.out.println(turno);
-				return true;
+		if( !seRepite( posicion ) ) {
+			tablero.cambiarEstado( posicion, turno );
+			if( cantidadJugadas >= 4 ) {
+				if( Control.hayGanador( posicion, combinaciones, tablero ) ) 
+				{
+					System.out.println( turno );
+					elJuegoTermino = true;
+					return true;
+				}
 			}
 		}
 		return false;
@@ -34,7 +39,6 @@ public class Juego {
 	
 	public String getTurno() 
 	{
-		//return ( turno.equals("CRUZ") ? "X" : "0" );
 		return turno;
 	}
 	
@@ -43,6 +47,21 @@ public class Juego {
 	{
 		cambiarTurno();
 		cantidadJugadas++;
+	}
+	
+	
+	public boolean verSiHayGanador() 
+	{
+		return elJuegoTermino;
+	}
+	
+	
+	public boolean seRepite(int ubicacion) 
+	{
+		if(tablero.verEstado(ubicacion).equals("VACIO"))
+			return false;
+		else
+			return true;
 	}
 	
 	
