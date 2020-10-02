@@ -27,7 +27,6 @@ public class Juego {
 			if( cantidadJugadas >= 4 ) {
 				if( Control.hayGanador( posicion, combinaciones, tablero ) ) 
 				{
-					System.out.println( turno );
 					elJuegoTermino = true;
 					return true;
 				}

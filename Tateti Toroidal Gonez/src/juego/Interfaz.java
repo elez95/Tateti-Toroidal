@@ -23,6 +23,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.Toolkit;
 import java.awt.Component;
+import java.awt.Cursor;
 
 public class Interfaz {
 
@@ -79,6 +80,7 @@ public class Interfaz {
 		frmTatetiToroidalElias.setBounds( 100, 100, 800, 600 );
 		frmTatetiToroidalElias.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
 		frmTatetiToroidalElias.getContentPane().setLayout( null );
+		frmTatetiToroidalElias.setLocationRelativeTo(null);
 		
 		
 		JLabel lblTatetiToroidal = new JLabel( "TATETI TOROIDAL" );
@@ -89,6 +91,14 @@ public class Interfaz {
 		
 		
 		salirLabel = new JLabel("");
+
+		salirLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) 
+			{
+				System.exit(0);
+			}
+		});
 		salirLabel.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Salir.png")));
 		salirLabel.setBounds(760, 11, 30, 35);
 		frmTatetiToroidalElias.getContentPane().add(salirLabel);
