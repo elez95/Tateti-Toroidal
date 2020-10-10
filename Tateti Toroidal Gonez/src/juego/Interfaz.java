@@ -194,28 +194,32 @@ public class Interfaz {
 	}
 	
 	//Metodos privados---------------------------------------------------------------------------------------
-	private void cargarJugada( int posicion, JButton boton ) 
+	private void cargarClickDeJugada( int posicion, JButton boton ) 
 	{
 		if(!juego.verSiHayGanador() ) 
 		{
 			if(!juego.seRepite(posicion)) {
-			if( juego.cargarPosicionEnTablero( posicion ) ) /////
-			{
-				dibujarImagenCelda(boton);
-				dibujarGanador();
-			}
-			else
-			{
-				dibujarImagenCelda(boton);
-			}
-			juego.avanzarTurno();
+				if( juego.cargarPosicionEnTablero( posicion ) ) /////
+				{
+					dibujarImagenCelda(boton);
+					
+					dibujarGanador();
+				}
+				else
+				{
+					dibujarImagenCelda(boton);
+					
+					juego.avanzarTurno();
 
-			dibujarCartelTurno();
+					dibujarCartelTurno();
+				}
+//				juego.avanzarTurno();
+//
+//				dibujarCartelTurno();
 			}
 		}
-
 	}
-	
+
 	
 	private void movimientoCursor( JButton boton ) 
 	{
@@ -234,7 +238,6 @@ public class Interfaz {
 				boton.setBackground( new Color( 7, 91, 139 ) );
 			}
 		} );
-		
 	}
 	
 	
@@ -245,10 +248,10 @@ public class Interfaz {
 		boton.addActionListener( new ActionListener() {
 			public void actionPerformed( ActionEvent e ) 
 			{
-				cargarJugada( posicion, boton );
+				cargarClickDeJugada( posicion, boton );
 			}
 		} );
-		boton.setFont( new Font( "Tahoma", Font.PLAIN, 75 ) );
+		//boton.setFont( new Font( "Tahoma", Font.PLAIN, 75 ) );
 		boton.setBackground( new Color( 02, 40, 59 ));
 		tablero.add( boton );
 	}
@@ -265,11 +268,23 @@ public class Interfaz {
 	
 	private void dibujarGanador() 
 	{
-		if(juego.getTurno().equals("CRUZ"))
+		if(juego.getTurno().equals("CRUZ")) 
+		{
 			ganadorCruz.setVisible(true);
+			quitarCartelesTurno();
+		}
 		else
+		{	
 			ganadorCuadrado.setVisible(true);
-		
+			quitarCartelesTurno();
+		}
+		//turnoCruzLabel.setVisible(false);
+		//turnoCuadradoLabel.setVisible(false);
+	}
+	
+	
+	private void quitarCartelesTurno()
+	{
 		turnoCruzLabel.setVisible(false);
 		turnoCuadradoLabel.setVisible(false);
 	}

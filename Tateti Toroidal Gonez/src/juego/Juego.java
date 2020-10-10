@@ -22,9 +22,12 @@ public class Juego {
 	
 	public boolean cargarPosicionEnTablero( int posicion ) 
 	{
-		if( !seRepite( posicion ) ) {
+		if( !seRepite( posicion ) ) 
+		{
 			tablero.cambiarEstado( posicion, turno );
-			if( cantidadJugadas >= 4 ) {
+			
+			if( cantidadJugadas >= 4 ) 
+			{
 				if( Control.hayGanador( posicion, combinaciones, tablero ) ) 
 				{
 					elJuegoTermino = true;
@@ -55,9 +58,9 @@ public class Juego {
 	}
 	
 	
-	public boolean seRepite(int ubicacion) 
+	public boolean seRepite(int posicion) 
 	{
-		if(tablero.verEstado(ubicacion).equals("VACIO"))
+		if( tablero.verEstado( posicion ).equals( "VACIO" ) )
 			return false;
 		else
 			return true;
@@ -66,7 +69,7 @@ public class Juego {
 	
 	private void cambiarTurno() 
 	{
-		if(turno.equals("CRUZ"))
+		if( turno.equals( "CRUZ" ) )
 			turno = "CIRCULO";
 		else
 			turno = "CRUZ";
