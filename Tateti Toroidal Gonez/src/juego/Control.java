@@ -15,15 +15,15 @@ public class Control {
 	 * Consulta si en alguna de las 4 orientaciones hay tateti
 	 * 
 	 * */
-	public static boolean hayGanador( int ubicacion, Combinaciones combinaciones, Tablero t ) 
+	public static boolean hayGanador( int posicion, Combinaciones combinaciones, Tablero t ) 
 	{
-		if( esTatetiHorizontal( ubicacion, combinaciones, t ) 
+		if( esTatetiHorizontal( posicion, combinaciones, t ) 
 			|| 
-			esTatetiVertical( ubicacion, combinaciones, t )
+			esTatetiVertical( posicion, combinaciones, t )
 			|| 
-			esTatetiDiagonalA( ubicacion, combinaciones, t ) 
+			esTatetiDiagonalA( posicion, combinaciones, t ) 
 			|| 
-			esTatetiDiagonalB( ubicacion, combinaciones, t ) 
+			esTatetiDiagonalB( posicion, combinaciones, t ) 
 			)
 		
 			return true;
@@ -38,36 +38,36 @@ public class Control {
 	 * 
 	 * */
 	
-	private static boolean esTatetiHorizontal( int ubicacion, Combinaciones combinacion, Tablero tableroActual ) 
+	private static boolean esTatetiHorizontal( int posicion, Combinaciones combinacion, Tablero tableroActual ) 
 	{
-		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraHorizontal( ubicacion );
+		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraHorizontal( posicion ).clone();
 		
 		return verCoincidencia( tableroActual, las3UbicacionesGanadoras );
 	}
 	
 	
 	
-	private static boolean esTatetiVertical( int ubicacion, Combinaciones combinacion, Tablero tableroActual ) 
+	private static boolean esTatetiVertical( int posicion, Combinaciones combinacion, Tablero tableroActual ) 
 	{
-		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraVertical( ubicacion );
+		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraVertical( posicion ).clone();
 		
 		return verCoincidencia( tableroActual, las3UbicacionesGanadoras );
 	}
 	
 	
 	
-	private static boolean esTatetiDiagonalA( int ubicacion, Combinaciones combinacion, Tablero tableroActual ) 
+	private static boolean esTatetiDiagonalA( int posicion, Combinaciones combinacion, Tablero tableroActual ) 
 	{
-		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraDiagonalA( ubicacion );
+		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraDiagonalA( posicion ).clone();
 		
 		return verCoincidencia( tableroActual, las3UbicacionesGanadoras );
 	}
 	
 	
 	
-	private static boolean esTatetiDiagonalB( int ubicacion, Combinaciones combinacion, Tablero tableroActual ) 
+	private static boolean esTatetiDiagonalB( int posicion, Combinaciones combinacion, Tablero tableroActual ) 
 	{
-		int[] las3UbicacionesGanadoras = combinacion.getSuCombinacionGanadoraDiagonalB( ubicacion );
+		int[] las3UbicacionesGanadoras =  combinacion.getSuCombinacionGanadoraDiagonalB( posicion ).clone();
 		
 		return verCoincidencia( tableroActual, las3UbicacionesGanadoras );
 	}
