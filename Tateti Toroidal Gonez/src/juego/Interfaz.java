@@ -74,6 +74,7 @@ public class Interfaz {
 	private void initialize() {
 		
 		frmTatetiToroidalElias = new JFrame();
+		frmTatetiToroidalElias.setIconImage(Toolkit.getDefaultToolkit().getImage(Interfaz.class.getResource("/imagenes/miniatura.png")));
 		frmTatetiToroidalElias.setUndecorated( true );
 		frmTatetiToroidalElias.setTitle( "Tateti Toroidal Elias Gonez" );
 		frmTatetiToroidalElias.getContentPane().setEnabled( false );
