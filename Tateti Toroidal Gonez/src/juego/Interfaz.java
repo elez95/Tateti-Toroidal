@@ -82,6 +82,12 @@ public class Interfaz {
 		frmTatetiToroidalElias.getContentPane().setLayout( null );
 		frmTatetiToroidalElias.setLocationRelativeTo(null);
 		
+		JLabel lblHechoPor = new JLabel("");
+		lblHechoPor.setBounds(70, 83, 374, 190);
+		frmTatetiToroidalElias.getContentPane().add(lblHechoPor);
+		lblHechoPor.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/hecho-por.png")));
+		lblHechoPor.setVisible(false);
+		
 		
 		JLabel lblTatetiToroidal = new JLabel( "TATETI TOROIDAL" );
 		lblTatetiToroidal.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/TATETI-TOROIDAL.png")));
@@ -99,6 +105,21 @@ public class Interfaz {
 				System.exit(0);
 			}
 		});
+		
+		JLabel lblSignoPregunta = new JLabel("");
+		lblSignoPregunta.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				lblHechoPor.setVisible(true);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblHechoPor.setVisible(false);
+			}
+		});
+		lblSignoPregunta.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/signo-pregunta.png")));
+		lblSignoPregunta.setBounds(35, 35, 37, 37);
+		frmTatetiToroidalElias.getContentPane().add(lblSignoPregunta);
 		salirLabel.setIcon(new ImageIcon(Interfaz.class.getResource("/imagenes/Salir.png")));
 		salirLabel.setBounds(760, 11, 30, 35);
 		frmTatetiToroidalElias.getContentPane().add(salirLabel);
