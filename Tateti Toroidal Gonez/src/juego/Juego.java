@@ -58,7 +58,7 @@ public class Juego {
 	}
 	
 	
-	public boolean seRepite(int posicion) 
+	public boolean seRepite( int posicion ) 
 	{
 		if( tablero.verEstado( posicion ).equals( "VACIO" ) )
 			return false;

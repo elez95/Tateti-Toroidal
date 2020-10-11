@@ -36,6 +36,7 @@ public class Combinaciones {
 		combinacionesEnHorizontal.put( 7, new int[] {6,7,8} );
 		combinacionesEnHorizontal.put( 8, new int[] {6,7,8} );
 		
+		
 		combinacionesEnVertical.put( 0, new int[] {0,3,6} );
 		combinacionesEnVertical.put( 1, new int[] {1,4,7} );
 		combinacionesEnVertical.put( 2, new int[] {2,5,8} );
@@ -46,6 +47,7 @@ public class Combinaciones {
 		combinacionesEnVertical.put( 7, new int[] {1,4,7} );
 		combinacionesEnVertical.put( 8, new int[] {2,5,8} );
 		
+		
 		combinacionesEnDiagonalA.put( 0, new int[] {0,4,8} );
 		combinacionesEnDiagonalA.put( 1, new int[] {1,5,6} );
 		combinacionesEnDiagonalA.put( 2, new int[] {2,3,7} );
@@ -55,6 +57,7 @@ public class Combinaciones {
 		combinacionesEnDiagonalA.put( 6, new int[] {1,5,6} );
 		combinacionesEnDiagonalA.put( 7, new int[] {2,3,7} );
 		combinacionesEnDiagonalA.put( 8, new int[] {0,4,8} );
+		
 		
 		combinacionesEnDiagonalB.put( 0, new int [] {0,5,7} );
 		combinacionesEnDiagonalB.put( 1, new int [] {1,3,8} );
@@ -73,18 +76,22 @@ public class Combinaciones {
 		return combinacionesEnHorizontal.get(ubicacion);
 	}
 	
+	
 	public int[] getSuCombinacionGanadoraVertical(int ubicacion) 
 	{
 		return combinacionesEnVertical.get(ubicacion);
 	}
 
+	
 	public int[] getSuCombinacionGanadoraDiagonalA(int ubicacion) 
 	{
 		return combinacionesEnDiagonalA.get(ubicacion);
 	}
 
+	
 	public int[] getSuCombinacionGanadoraDiagonalB(int ubicacion) 
 	{
 		return combinacionesEnDiagonalB.get(ubicacion);
 	}
+	
 }
