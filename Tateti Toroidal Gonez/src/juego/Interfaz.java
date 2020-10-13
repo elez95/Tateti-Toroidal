@@ -85,6 +85,7 @@ public class Interfaz {
 		frmTatetiToroidalElias.setLocationRelativeTo( null );
 	//----------------------------------------------------------------------------------------------------------------------------------
 		
+		
 		JLabel lblHechoPor = new JLabel( "" );
 		lblHechoPor.setBounds( 70, 83, 374, 190 );
 		frmTatetiToroidalElias.getContentPane().add( lblHechoPor );
@@ -228,7 +229,7 @@ public class Interfaz {
 		
 	}
 	
-	//Metodos privados---------------------------------------------------------------------------------------
+//Metodos privados---------------------------------------------------------------------------------------
 	private void cargarClickDeJugada( int posicion, JButton boton ) 
 	{
 		if( !juego.verSiHayGanador() ) 
@@ -332,4 +333,6 @@ public class Interfaz {
 		else
 			turnoCruzLabel.setVisible( false );
 	}
+//----------------------------------------------------------------------------------------------------------------
+	
 }

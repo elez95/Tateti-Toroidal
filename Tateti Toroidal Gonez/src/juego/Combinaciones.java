@@ -1,14 +1,8 @@
 package juego;
 
 import java.util.HashMap;
-/*
- * En esta clase se guardan todas las variantes ganadoras para cada cuadrante,
- * están las variantes combinacionesEnHorizontal, combinacionesEnVertical y diagonales/toroidal
- * 
- * Parece todo muy manual y hardcodeado, se puede mejorar pero igual esto se ejecuta una sola
- * vez y es todo constante (verificar pero estoy seguro que si)
- * 
- * */
+
+
 public class Combinaciones {
 	
 /*
@@ -22,10 +16,7 @@ public class Combinaciones {
 	
 	Combinaciones()
 	{
-		/*
-		 * Guardo los arreglos en el hashmap respetando la variante ganadora de cada celda
-		 * 
-		 * */
+		
 		combinacionesEnHorizontal.put( 0, new int[] {0,1,2} );
 		combinacionesEnHorizontal.put( 1, new int[] {0,1,2} );
 		combinacionesEnHorizontal.put( 2, new int[] {0,1,2} );
