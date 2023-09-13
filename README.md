@@ -19,6 +19,8 @@ El juego se basa en el clásico ta-te-ti sobre un tablero 3x3, pero se considera
 Destaca las características clave de tu proyecto. Puedes enumerarlas o describirlas brevemente aquí.
 
 - Lógica de victoria: Cada una de las 9 celdas tienen un grupo de combinaciones posibles para lograr la victoria, se tiene en cuenta las diferentes orientaciones que el jugador elija (horizontal, vertical, diagonal).
+  
+  ![Ubicación de las celdas](tateti.png)
 - Característica 2: Descripción
 - ...
 
