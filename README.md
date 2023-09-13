@@ -1,6 +1,6 @@
 # TATETI TOROIDAL
 
-Código del juego TA-TE-Toro, inspirado en el clásico juego Tateti (tic tac toe). Hecho en Java.
+Código del juego TA-TE-Toro, inspirado en el clásico juego Tateti (tic tac toe). Juego para dos jugadores. Hecho en Java.
 
 ## Tabla de Contenidos
 
@@ -18,7 +18,7 @@ El juego se basa en el clásico ta-te-ti sobre un tablero 3x3, pero se considera
 
 Destaca las características clave de tu proyecto. Puedes enumerarlas o describirlas brevemente aquí.
 
-- Característica 1: Descripción
+- Lógica de victoria: Cada una de las 9 celdas tienen un grupo de combinaciones posibles para lograr la victoria, se tiene en cuenta las diferentes orientaciones que el jugador elija (horizontal, vertical, diagonal).
 - Característica 2: Descripción
 - ...
 
