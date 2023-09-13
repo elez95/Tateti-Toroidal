@@ -1,3 +1,5 @@
+![header](header.jpg)
+
 # TATETI TOROIDAL
 
 Código del juego TA-TE-Toro, inspirado en el clásico juego Tateti (tic tac toe). Juego para dos jugadores. Hecho en Java.
