@@ -4,15 +4,18 @@
 
 Código del juego TA-TE-Toro, inspirado en el clásico juego Tateti (tic tac toe). Juego para dos jugadores. Hecho en Java.
 
-![screenshot](Screenshot_6.png)
+<img src="Screenshot_6.png" alt="Captura del juego" width="500" align="center">
+
+<!--![screenshot](Screenshot_6.png)-->
 
 ## Tabla de Contenidos
 
 - [Introducción](#introducción)
 - [Características](#características)
+- [Clases](#clases)
 - [Instalación](#instalación)
 - [Contribución](#contribución)
-- [Licencia](#licencia)
+- [Logros](#logros) 
 
 ## Introducción
 
@@ -32,8 +35,7 @@ El juego se basa en el clásico ta-te-ti sobre un tablero 3x3, pero se considera
 </td>
 <td>
 <a >
-<img src="posibilidades.png">
-</a>
+<img src="posibilidades.png" width = "500">
 </td>
 
 </tr>
@@ -81,3 +83,7 @@ $ git clone https://github.com/elez95/Tateti-Toroidal.git
 Puedes colaborar haciendo un fork del proyecto y creando nuevas características al juego como:
 - Reiniciar el juego una vez lograda una partida.
 - Agregar tablero con el puntaje de cada jugador.
+
+## Logros
+
+El objetivo de este proyecto fue profundizar los conocimientos del lenguaje Java junto con los fundamentos básicos de la programación orientada a objetos. Además se pone en práctica las pruebas de código con pruebas unitarias (JUnit).
