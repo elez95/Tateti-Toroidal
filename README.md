@@ -45,7 +45,7 @@ El juego se basa en el clásico ta-te-ti sobre un tablero 3x3, pero se considera
 
 ### Interfaz
 
-Se encarga de mostrar en pantalla el desarrollo del juego. Fue diseñado con WindowBuilder. Tiene un JPanel con nueve botons que emulan las celdas del tablero y todo esto está sobre un JFrame.
+Se encarga de mostrar en pantalla el desarrollo del juego. Fue diseñado con WindowBuilder. Tiene un JPanel con nueve botones que emulan las celdas del tablero y todo esto está sobre un JFrame.
 
 ### Juego
 
